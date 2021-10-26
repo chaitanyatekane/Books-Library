@@ -35,7 +35,7 @@ function App() {
         {array.map((item, i) => {
           return (
             <li key={i} className="list-item">
-              <i className="fa fa-book"></i> &nbsp;
+              <i className="fa fa-book-open-reader"></i> &nbsp;
               {item.title}
             </li>
           );
