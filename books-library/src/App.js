@@ -21,11 +21,26 @@ function App() {
   if (error) {
     return <pre>{JSON.stringify(error, null, 2)}</pre>;
   }
-  if (data) {
-    return <div className="container">{data.docs[0].title}</div>;
+  if (!data) {
+    return null;
   }
 
-  return <h1>Hello</h1>;
+  let array = data.docs;
+
+  return (
+    <div className="container">
+      <ul>
+        {array.map((item, i) => {
+          return (
+            <li key={i}>
+              <i className="fa fa-book"></i> &nbsp;
+              {item.title}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
 export default App;
