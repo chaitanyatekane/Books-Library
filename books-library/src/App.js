@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import Search from "./Search";
 
 function App() {
   const [data, setData] = useState("");
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <div className="container">
+      <Search />
       <ul>
         {array.map((item, i) => {
           return (
