@@ -6,7 +6,7 @@ function LoadingPage() {
     <div className="loading-page">
       <h1 id="heading">Books Library Created by Chaitanya</h1>
       <div className="section-2">
-        <h2 id="sub-heading">Loading...</h2>
+        <h2 id="sub-heading">Loading....</h2>
         <ThreeDots
           id="loading-icon"
           stroke="#000000"

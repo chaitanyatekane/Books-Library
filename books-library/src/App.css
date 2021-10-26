@@ -36,6 +36,11 @@ body {
   width: 45%;
 }
 
+.list-item:hover {
+  cursor: pointer;
+  color: red;
+}
+
 @media screen and (max-width: 768px) {
   body {
     overflow-x: hidden;
