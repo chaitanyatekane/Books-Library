@@ -1,0 +1,25 @@
+#heading {
+  padding-top: 26px;
+  color: rgb(14, 13, 13);
+  text-align: center;
+  margin: 0;
+}
+
+#sub-heading {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: rgb(160, 94, 8);
+}
+
+#loading-icon {
+  text-align: center;
+}
+
+.section-2 {
+  text-align: center;
+}
+
+#bottom {
+  border-bottom: 26px;
+}

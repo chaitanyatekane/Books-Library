@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import LoadingPage from "./LoadingPage";
 import Search from "./Search";
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <h1 style={{ textAlign: "center" }}>Loading...</h1>;
+    return <LoadingPage />;
   }
   if (error) {
     return <pre>{JSON.stringify(error, null, 2)}</pre>;
