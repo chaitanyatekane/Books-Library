@@ -1,12 +1,14 @@
-// import { useState } from "react";
+function Search({ term, searchKeyword }) {
+  function handleSearch(e) {
+    searchKeyword(e.target.value);
+  }
 
-function Search() {
-  function handleSearch(e) {}
   return (
     <>
       <input
         className="input-field"
         type="text"
+        value={term}
         placeholder="Enter Book Name"
         onChange={handleSearch}
       ></input>

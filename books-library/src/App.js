@@ -6,6 +6,8 @@ function App() {
   const [data, setData] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -28,19 +30,49 @@ function App() {
 
   let array = data.docs;
 
+  const searchHandler = (search) => {
+    setSearch(search);
+
+    if (search !== "") {
+      const newBookList = array.filter((book) => {
+        return Object.values(book)
+          .join(" ")
+          .toLowerCase()
+          .includes(search.toLowerCase());
+      });
+      setSearchResults(newBookList);
+    } else {
+      setSearchResults(array);
+    }
+  };
+
   return (
     <div className="container">
-      <Search />
-      <ul className="list">
-        {array.map((item, i) => {
-          return (
-            <li key={i} className="list-item">
-              <i className="fa fa-book-open-reader"></i> &nbsp;
-              {item.title}
-            </li>
-          );
-        })}
-      </ul>
+      <Search term={search} searchKeyword={searchHandler} />
+
+      {search.length < 1 ? (
+        <ul className="list">
+          {array.map((item, i) => {
+            return (
+              <li key={i} className="list-item">
+                <i className="fa fa-book-open-reader"></i> &nbsp;
+                {item.title}
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <ul className="list">
+          {searchResults.map((item, i) => {
+            return (
+              <li key={i} className="list-item">
+                <i className="fa fa-book-open-reader"></i> &nbsp;
+                {item.title}
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 }
