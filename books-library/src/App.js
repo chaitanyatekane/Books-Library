@@ -31,10 +31,10 @@ function App() {
   return (
     <div className="container">
       <Search />
-      <ul>
+      <ul className="list">
         {array.map((item, i) => {
           return (
-            <li key={i}>
+            <li key={i} className="list-item">
               <i className="fa fa-book"></i> &nbsp;
               {item.title}
             </li>

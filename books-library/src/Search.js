@@ -5,6 +5,7 @@ function Search() {
   return (
     <>
       <input
+        className="input-field"
         type="text"
         placeholder="Enter Book Name"
         onChange={handleSearch}
